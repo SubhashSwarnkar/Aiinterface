@@ -14,7 +14,7 @@ function AppContent({
   isLoading, 
   mobileSidebarOpen, 
   currentConversation, 
-  conversations,
+
   toggleMobileSidebar,
   closeMobileSidebar,
   selectConversation,
