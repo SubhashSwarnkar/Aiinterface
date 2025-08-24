@@ -164,7 +164,7 @@ export function PromptEditor({ onSubmit, isLoading }: PromptEditorProps) {
               <motion.div
                 className={`relative w-full rounded-2xl border-2 transition-all duration-300 ${
                   isFocused
-                    ? 'border-transparent bg-gradient-to-r from-purple-500 to-purple-600 p-0.5 shadow-2xl shadow-purple-400/30 dark:shadow-purple-300/20'
+                    ? 'border-purple-900 bg-gradient-to-r from-purple-300 to-purple-600 p-0.5 shadow-2xl shadow-purple-400/30 dark:shadow-purple-300/20'
                     : 'border-gray-300 dark:border-purple-800/30 hover:border-gray-400 dark:hover:border-purple-700/50'
                 }`}
                 animate={{
@@ -207,7 +207,7 @@ export function PromptEditor({ onSubmit, isLoading }: PromptEditorProps) {
                         type="button"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="p-2 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20 rounded-lg transition-all duration-200"
+                        className="p-2 text-purple-700 dark:text-white hover:text-purple-700 dark:hover:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20 rounded-lg transition-all duration-200"
                         title="Attach file"
                       >
                         <Paperclip size={18} />
@@ -220,7 +220,7 @@ export function PromptEditor({ onSubmit, isLoading }: PromptEditorProps) {
                         className={`px-3 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 ${
                           showModelSettings
                             ? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg shadow-purple-500/25 border border-purple-400'
-                            : 'text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20'
+                            : 'text-purple-600 dark:text-white hover:text-purple-700 dark:hover:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20'
                         }`}
                         title="Toggle model settings"
                       >
@@ -235,7 +235,7 @@ export function PromptEditor({ onSubmit, isLoading }: PromptEditorProps) {
                         type="button"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="p-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700/60 rounded-lg transition-all duration-200"
+                        className="p-2 text-purple-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-700/60 rounded-lg transition-all duration-200"
                         title="Voice input"
                       >
                         <Mic size={18} />
@@ -251,7 +251,7 @@ export function PromptEditor({ onSubmit, isLoading }: PromptEditorProps) {
                       className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 border ${
                         prompt.trim() && !isLoading
                           ? 'bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white shadow-lg shadow-purple-500/25 border-purple-400'
-                          : 'bg-purple-200/50 dark:bg-purple-800/30 text-purple-400 dark:text-purple-500 border-purple-300 dark:border-purple-700/50 cursor-not-allowed'
+                          : 'bg-purple-300/30 dark:bg-purple-500/50 text-purple-800 dark:text-white border-purple-300 dark:border-purple-900/50 cursor-not-allowed'
                       }`}
                       onClick={handleSubmit}
                     >
@@ -381,7 +381,7 @@ export function PromptEditor({ onSubmit, isLoading }: PromptEditorProps) {
                         {/* Token Usage */}
                         <div className="space-y-3">
                           <label className="block text-sm font-medium text-slate-700 dark:text-slate-300">
-                            Token Usage
+                            Temprature
                           </label>
                           <div className="flex flex-col gap-3">
                             <div className="relative w-full h-4 bg-purple-100/50 dark:bg-purple-900/20 rounded-full overflow-hidden">
