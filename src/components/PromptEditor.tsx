@@ -44,20 +44,20 @@ export function PromptEditor({ onSubmit, isLoading }: PromptEditorProps) {
     <motion.div 
                   className={`relative w-full rounded-xl border-2 transition-all duration-300 ${
                     isFocused
-                      ? 'border-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-purple-600 p-0.5 shadow-lg shadow-purple-500/25'
-                      : 'border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500'
+                      ? 'border-transparent bg-gradient-to-r from-purple-500/90 via-blue-500/90 to-purple-600/90 dark:from-purple-600/90 dark:via-blue-600/90 dark:to-purple-700/90 p-0.5 shadow-lg shadow-purple-500/20 dark:shadow-purple-900/30'
+                      : 'border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600'
                   }`}
             animate={{
-              scale: isFocused ? 1.01 : 1,
+              scale: isFocused ? 1.005 : 1,
             }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
           >
                               {/* Input Container */}
                   <div className={`p-3 backdrop-blur-sm rounded-xl ${
                     isFocused 
-                      ? 'bg-purple-50/80 dark:bg-purple-900/10'
-                      : 'bg-purple-50/50 dark:bg-slate-800/90'
-                  }`}>
+                      ? 'bg-white/95 dark:bg-slate-900/95 shadow-sm'
+                      : 'bg-white/90 dark:bg-slate-900/90'
+                  } transition-colors duration-200`}>
               <textarea
                 ref={textareaRef}
                 value={prompt}
@@ -65,18 +65,18 @@ export function PromptEditor({ onSubmit, isLoading }: PromptEditorProps) {
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
                 placeholder="Type your message here..."
-                className="w-full min-h-[60px] max-h-[120px] p-0 text-base border-none bg-transparent resize-none focus:outline-none focus:ring-0 text-gray-900 dark:text-slate-100 placeholder-gray-400 dark:placeholder-slate-400"
+                className="w-full min-h-[60px] max-h-[120px] p-0 text-base border-none bg-transparent resize-none focus:outline-none focus:ring-0 text-gray-900 dark:text-slate-100 placeholder-gray-500/70 dark:placeholder-slate-400/70 selection:bg-purple-500/20 dark:selection:bg-purple-500/30"
                 style={{ fontFamily: 'inherit' }}
                 disabled={isLoading}
               />
             </div>
 
             {/* Compact Action Bar for Mobile */}
-            <div className={`px-3 py-2 backdrop-blur-sm border-t border-gray-200 dark:border-slate-600/60 rounded-b-xl ${
+            <div className={`px-3 py-2 backdrop-blur-sm border-t transition-colors duration-200 ${
               isFocused
-                ? 'bg-purple-50/80 dark:from-slate-800/80 dark:to-slate-700/80'
-                : 'bg-purple-50/50 dark:from-slate-800/80 dark:to-slate-700/80'
-            }`}>
+                ? 'border-purple-200/30 dark:border-purple-500/20 bg-white/95 dark:bg-slate-900/95'
+                : 'border-gray-200 dark:border-slate-700/50 bg-white/90 dark:bg-slate-900/90'
+            } rounded-b-xl`}>
             <div className="flex items-center justify-between">
                 {/* Left Side - Tools */}
                 <div className="flex items-center gap-2">
@@ -84,7 +84,7 @@ export function PromptEditor({ onSubmit, isLoading }: PromptEditorProps) {
                     type="button"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-                    className="p-1.5 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20 rounded-lg transition-all duration-200"
+                    className="p-1.5 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 hover:bg-purple-100/80 dark:hover:bg-purple-500/20 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500/40 dark:focus:ring-purple-500/30"
                     title="Attach file"
                   >
                     <Paperclip size={16} />
@@ -176,8 +176,8 @@ export function PromptEditor({ onSubmit, isLoading }: PromptEditorProps) {
                 {/* Input Container */}
                 <div className={`p-6 backdrop-blur-sm rounded-t-2xl ${
                   isFocused 
-                    ? 'bg-purple-50/80 dark:bg-purple-800/20'
-                    : 'bg-purple-50/50 dark:bg-purple-800/20'
+                    ? 'bg-black-50/80 dark:bg-black-800/20'
+                    : 'bg-black-50/50 dark:bg-black-800/20'
                 }`}>
                   {/* Placeholder Text */}
                   {/* Textarea */}
@@ -197,8 +197,8 @@ export function PromptEditor({ onSubmit, isLoading }: PromptEditorProps) {
                 {/* Bottom Action Bar */}
                 <div className={`px-6 py-4 backdrop-blur-sm border-t border-gray-200 dark:border-purple-800/30 rounded-b-2xl ${
                     isFocused
-                      ? 'bg-purple-50/80 dark:bg-purple-800/20'
-                      : 'bg-purple-50/50 dark:bg-purple-800/20'
+                      ? 'bg-black-50/80 dark:bg-black-800/20'
+                      : 'bg-black-50/50 dark:bg-black-800/20'
                   }`}>
                   <div className="flex items-center justify-between">
                     {/* Left Side - Tools */}
